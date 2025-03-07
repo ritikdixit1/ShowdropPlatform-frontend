@@ -22,10 +22,13 @@ const CampaignPage = () => {
 
   const redeemDiscountCode = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/redeem", {
-        email: email,
-        campaign_id: id,
-      });
+      const response = await axios.post(
+        "https://showdropplatform-backend.onrender.com/api/redeem",
+        {
+          email: email,
+          campaign_id: id,
+        }
+      );
 
       const discountCode = response.data.code;
 

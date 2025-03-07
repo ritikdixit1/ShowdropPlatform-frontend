@@ -59,7 +59,9 @@ const CampaignList = () => {
     // Fetch campaigns from the API
     const fetchCampaigns = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/campaigns"); // or use fetch
+        const response = await axios.get(
+          "https://showdropplatform-backend.onrender.com/api/campaigns"
+        ); // or use fetch
         setCampaigns(response.data);
       } catch (error) {
         console.error("Error fetching campaigns:", error);
