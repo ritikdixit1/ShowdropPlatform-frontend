@@ -1,0 +1,76 @@
+/* Loading State */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.loading-text {
+  animation: pulse 1.5s infinite; /* Optional: Add a pulse animation */
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Error State */
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #ffe6e6; /* Light red background */
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ff4d4d; /* Red border */
+}
+
+.error-text {
+  color: #ff4d4d; /* Red text */
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Campaign List */
+.campaign-container {
+  padding: 20px;
+}
+
+.campaign-link {
+  text-decoration: none; /* Remove underline from links */
+}
+
+.campaign-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.campaign-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add hover effect */
+}
+
+.campaign-title {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.campaign-description {
+  font-size: 1rem;
+  color: #666;
+}

@@ -1,0 +1,64 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.discount-code-page {
+  color: white;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.discount-code {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.discount-code h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.discount-code p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1ecb9a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  .header p {
+    font-size: 1rem;
+  }
+}
