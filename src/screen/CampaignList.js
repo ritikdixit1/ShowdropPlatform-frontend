@@ -1,58 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"; // or use fetch
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import "../style/CampaignPage.css"; // Importing the styles
-
-// Styled components for styling the page
-const CampaignContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1200px;
-`;
-
-const CampaignCard = styled.div`
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: all 0.3s ease;
-  border-left: 5px solid #1ecb9a; /* Adding color to the left border */
-
-  &:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    transform: translateY(-8px);
-  }
-
-  &:nth-child(odd) {
-    border-left: 5px solid #1ecb9a; /* Different color for odd cards */
-  }
-
-  &:nth-child(even) {
-    border-left: 5px solid #1ecb9a; /* Different color for even cards */
-  }
-`;
-
-const CampaignTitle = styled.h2`
-  font-size: 1.8em;
-  color: #333;
-  font-weight: 600;
-  margin-bottom: 10px;
-`;
-
-const CampaignDescription = styled.p`
-  color: #777;
-  font-size: 1.1em;
-  margin-top: 10px;
-`;
+import "../style/CampaignList.css"; // Importing the styles
 
 const CampaignList = () => {
   const [campaigns, setCampaigns] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -92,20 +45,20 @@ const CampaignList = () => {
   return (
     <>
       <h2 className="heading">Explore the Latest ShowDrop Campaigns</h2>
-      <CampaignContainer>
+      <div className="campaign-container">
         {campaigns.map((campaign) => (
           <Link
             key={campaign.id}
             to={`/campaign/${campaign.id}?campaignName=${campaign.name}`}
             style={{ textDecoration: "none" }}
           >
-            <CampaignCard key={campaign.id}>
-              <CampaignTitle>{campaign.name}</CampaignTitle>
-              <CampaignDescription>{campaign.description}</CampaignDescription>
-            </CampaignCard>
+            <div className="campaign-card">
+              <h2 className="campaign-title">{campaign.name}</h2>
+              <p className="campaign-description">{campaign.description}</p>
+            </div>
           </Link>
         ))}
-      </CampaignContainer>
+      </div>
     </>
   );
 };

@@ -1,76 +1,48 @@
-/* Loading State */
-.loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  font-size: 1.5rem;
-  color: #555;
-}
-
-.loading-text {
-  animation: pulse 1.5s infinite; /* Optional: Add a pulse animation */
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Error State */
-.error-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  background-color: #ffe6e6; /* Light red background */
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ff4d4d; /* Red border */
-}
-
-.error-text {
-  color: #ff4d4d; /* Red text */
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-/* Campaign List */
+/* CampaignContainer.css */
 .campaign-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
   padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-.campaign-link {
-  text-decoration: none; /* Remove underline from links */
-}
-
+/* CampaignCard.css */
 .campaign-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-left: 5px solid #1ecb9a; /* Adding color to the left border */
 }
 
 .campaign-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add hover effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
 }
 
+.campaign-card:nth-child(odd) {
+  border-left: 5px solid #1ecb9a; /* Different color for odd cards */
+}
+
+.campaign-card:nth-child(even) {
+  border-left: 5px solid #1ecb9a; /* Different color for even cards */
+}
+
+/* CampaignTitle.css */
 .campaign-title {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
+  font-size: 1.8em;
   color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
+/* CampaignDescription.css */
 .campaign-description {
-  font-size: 1rem;
-  color: #666;
+  color: #777;
+  font-size: 1.1em;
+  margin-top: 10px;
 }
