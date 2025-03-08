@@ -37,26 +37,11 @@ const CampaignPage = () => {
       console.error("Error redeeming code:", error);
 
       if (error.response) {
-        if (
-          error.response.status === 400 &&
-          error.response.data.error ===
-            "You already have a code for this campaign"
-        ) {
-          setError("You already have a discount code for this campaign.");
-        } else if (
-          error.response.status === 404 &&
-          error.response.data.error === "No codes left for this campaign"
-        ) {
-          setError("Sorry, no codes are left for this campaign.");
-        } else {
+        if (error.response) {
           setError(
-            "An error occurred while redeeming the code. Please try again."
+            error.response.data.error || "An error occurred. Please try again."
           );
         }
-      } else {
-        setError(
-          "An unexpected error occurred. Please check your connection and try again."
-        );
       }
     } finally {
       setLoading(false);
